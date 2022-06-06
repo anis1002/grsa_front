@@ -1,0 +1,105 @@
+{
+  "Material Type": "نوع العتاد",
+
+  "Properties": "خصائص",
+  "Serial Number": "الرقم التسلسلي",
+  "Add Material": "اضافة عتاد",
+
+  "Delete Material": "حدف عتاد",
+  "Edit Material": "تعديل العتاد",
+
+  "Good": "جيدة",
+  "Not Good": "سيئة",
+
+  "Add Room": "اضافة قسم",
+  "Edit Room": "تعديل القسم",
+  "Room Name": "اسم القسم",
+  "Delete Room": "حذف قسم",
+  "Add Teacher": "اضافة معلم",
+  "Email": "البريد الالكتروني",
+  "LOGIN": "تسجيل الدخول",
+  "Use Your Professional Account": "استخدم حسابك المهني",
+  "Incorrect email or password.": "بريد أو كلمة مرورغير صحيحة.",
+  "Manage Teacher": "إدارة المعلم",
+  "Manage Room": "إدارة الاقسام",
+  "Manage Material": "ادارة العتاد",
+  "Recieved Messages": "الرسائل التي تم استلامها",
+  "Book Material": "حجز عتاد",
+
+  "Send Message To": "ارسل رسالة الى",
+  "Write Your Message Here": "اكتب رسالتك هنا",
+
+  "Send": "ارسل",
+  "Send Message": "ارسال رسالة",
+
+  "login_choose": "تسجيل الدخول ك",
+  "language": "العربية",
+  "Teacher": "استاذ",
+  "Administrator": "مسؤول",
+  "Administrative Person": "عون اداري",
+
+  "Teacher_type": "استاذ",
+  "Edit Profile": "تعديل الملف الشخصي",
+  "Manage Reservation": "إدارة الحجز",
+  "Consult Reservation": "تفقد الحجوزات",
+  "Add Reservation": "إضافة حجز",
+  "Reserve Material": "حجز عتاد",
+  "My Reservation": "حجوزاتي",
+  "Contact Owner": "الاتصال بصاحب الحجز",
+  "Logout": "تسجيل الخروج",
+
+  "H": "سا",
+  "Rooms": "الاقسام",
+  "Room Type": "نوع القسم",
+
+  "Td": "اعمال موجهة",
+  "Tp": "اعمال تطيبقية",
+  "Amphi": "مدرج",
+  "Consult Booking": "تفقد الحجوزات",
+  "All": "الكل",
+  "Add Booking": "إضافة حجز",
+  "Select a Timing": "اختر توقيت",
+
+  "Capacity": "سعة",
+  "Floor": "طابق",
+  "Action": "فعل",
+
+  "Reserve": "حجز",
+
+  "date": "اليوم",
+  "timing": "التوقيت",
+
+  "Edit": "تعديل",
+  "Delete": "حدف",
+  "Edit Booking": "تعديل الحجز",
+  "Update": "تحديث",
+  "Are You Sure": "هل انت متأكد ؟",
+  "Yes": "نعم",
+  "No": "لا",
+
+  "First Name": "الاسم",
+  "Last Name": "اللقب",
+  "Phome Number": "رقم الهاتف",
+  "Password": "كلمة المرور",
+  "Save": "حفظ",
+
+  "Department": "فرع",
+  "Account State": "حالة الحساب",
+  "Active": "مفعل",
+  "Desactive": "غر مفعل",
+  "Grade": "رتبة",
+  "Prof Td": "استاد اعمال موجهة",
+  "Prof Tp": "استاد اعمال تطبيبقية",
+  "Prof Cour": "استاد محاضرات",
+  "State": "حالة",
+
+  "Secondary": "استاد احتياطي",
+  "Principale": "استاد اساسي",
+  "Add": "اضافة",
+  "Cancel": "الغاء",
+  "Status": "حالة الحساب",
+  "Edit Teacher": "تعديل معلومات اللاستاذ",
+
+  "Delete Teacher": "حدف استاذ",
+  "Want to delete?": "هل تريد حدف؟"
+}

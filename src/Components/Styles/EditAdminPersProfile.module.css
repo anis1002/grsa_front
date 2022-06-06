@@ -1,0 +1,235 @@
+@import url("../font/stylesheet.css");
+*{
+  font-family: 'Roboto';
+}
+.mainPage {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background: url("../../Components/Img/svgcard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+
+  width: 800px;
+  height: 500px;
+  border-radius: 30px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.75);
+}
+.card_left {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+.line {
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+}
+.card_left img {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* background-color: #00808046; */
+}
+.card_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card_right h1 {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  font-size: 20px;
+  transform: translateX(-50%);
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+ 
+}
+.group {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: bold;
+}
+.input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: #000000;
+   
+}
+.input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+.label {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  font-weight: bold;
+}
+
+/* active state */
+.input:focus ~ .label,
+.input:valid ~ .label {
+  top: -20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.782);
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #ffffff;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+.input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+.input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #ffffff;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #ffffff;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #ffffff;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.button {
+  
+  background: #ffffff;
+  border: 2px solid #008080;
+  border-radius: 4px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: border-box;
+  color: #008080;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  min-height: 40px;
+  outline: 0;
+  padding: 11px 20px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  transition: 0.3s all ease-in;
+  letter-spacing: 3px;
+  /* font-family: sans-serif; */
+  position: absolute;
+  top: 80%;
+  right: 13%;
+}
+
+.button:hover,
+.button:active {
+  /* background-color: #008080; */
+  background-position: 0 0;
+  /* color: #ffffff; */
+  opacity: .8;
+}

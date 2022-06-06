@@ -1,0 +1,102 @@
+{
+  "Material Type":"Material Type",
+  "Properties":"Properties",
+  "Serial Number":"Serial Number",
+  "Send":"Send",
+  "Send Message":"Send Message",
+  "Send Message To":"Send Message To",
+  "Write Your Message Here":"Write Your Message Here",
+  "Recieved Messages":"Recieved Messages",
+  "Book Material":"Book Material",
+
+  
+
+  "Add Material":"Add Material",
+  "Delete Material":"Delete Material",
+  "Edit Material":"Edit Material",
+  "Good":"Good",
+  "Not Good":"Not Good",
+
+
+
+  "Add Room":"Add Room",
+  "Edit Room":"Edit Room",
+  "Room Name":"Room Name",
+  "Delete Room":"Delete Room",
+  "Add Teacher": "Add Teacher",
+  "Email": "Email",
+  "LOGIN": "LOGIN",
+  "Use Your Professional Account": "Use Your Professional Account",
+  "Incorrect email or password.": "Incorrect email or password.",
+  "Manage Teacher": "Manage Teacher",
+  "Manage Room": "Manage Room",
+  "Manage Material": "Manage Material",
+  "login_choose": "Login as",
+  "language": "English",
+  "Teacher": "Teacher",
+  "Administrator": "Administrator",
+  "Administrative Person": "Administrative Person",
+
+  "Teacher_type": "Teacher",
+  "Manage Reservation": "Manage Reservation",
+  "Edit Profile": "Edit Profile",
+  "Consult Reservation": "Consult Reservation",
+  "Add Reservation": "Add Reservation",
+  "Reserve Material": "Reserve Material",
+  "My Reservation": "My Reservation",
+  "Contact Owner": "Contact Owner",
+  "Logout": "Logout",
+
+  "H": "H",
+  "Rooms": "Rooms",
+  "Room Type": "Room Type",
+
+  "Td": "Td",
+  "Tp": "Tp",
+  "Amphi": "Amphi",
+  "All": "All",
+
+  "Consult Booking": "Consult Booking",
+  "Add Booking": "Add Booking",
+  "Select a Timing": "Select a Timing",
+
+  "Capacity": "Capacity",
+  "Floor": "Floor",
+  "Action": "Action",
+
+  "Reserve": "Reserve",
+
+  "date": "date",
+  "timing": "timing",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "Edit Booking": "Edit Booking",
+
+  "Update": "Update",
+  "Are You Sure": "Are You Sure ?",
+  "Yes": "Yes",
+  "No": "No",
+  "First Name": "First Name",
+  "Last Name": "Last Name",
+  "Phome Number": "Phone Number",
+  "Password": "Password",
+  "Save": "Save",
+
+  "Department": "Department",
+  "Account State": "Account State",
+  "Active": "Active",
+  "Desactive": "Desactive",
+  "Grade": "Grade",
+  "Prof Td": "Prof Td",
+  "Prof Tp": "Prof Tp",
+  "Prof Cour": "Prof Cour",
+  "State": "State",
+  "Secondary": "Secondary",
+  "Principale": "Principale",
+  "Add": "Add",
+  "Cancel": "Cancel",
+  "Status":"Account Status",
+
+  "Delete Teacher": "Delete Teacher",
+  "Want to delete?": "Want to delete?"
+}
