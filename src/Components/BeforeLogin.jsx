@@ -108,6 +108,7 @@ const BeforeLogin = () => {
           </div>
         </div>
         <div className={styles.Login_Container}>
+          
           <div className={styles.img_size}></div>
           <div className={styles.select_field}>
             <div className={styles.Logo}></div>
@@ -153,7 +154,7 @@ const BeforeLogin = () => {
                     );
                   }}
                 >
-                  {t('Administrative Person')}
+                  {t("Administrative Person")}
                 </button>
               </Link>
             </div>

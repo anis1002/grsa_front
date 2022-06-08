@@ -25,22 +25,20 @@ import {
   AiTwotoneEdit,
 } from "react-icons/ai";
 import { BsCartCheck } from "react-icons/bs";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
 import avatar from "../../Img/teacher.webp";
 
-
-
 const SideBar = ({ children }) => {
   const [email, setemail] = useState("");
-   const [firstName, setfirstName] = useState("");
-   const [lastName, setlastName] = useState("");
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
   useEffect(() => {
     showTeacherInput();
-  }, [firstName,lastName]);
+  }, [firstName, lastName]);
 
-   const { t } = useTranslation();
+  const { t } = useTranslation();
   const routes = [
     {
       path: "/Teacher/EditProfile",
@@ -72,10 +70,22 @@ const SideBar = ({ children }) => {
         //   name: "Edit Reservation",
         //   icon: <AiTwotoneEdit />,
         // },
+      ],
+    },
+    {
+      path: "/",
+      name: t("My Reservation"),
+      icon: <BiBookBookmark />,
+      subRoutes: [
+        {
+          path: "/Teacher/MaterialReservation",
+          name: t("Material"),
+          icon: <BiLaptop />,
+        },
         {
           path: "/Teacher/DeleteReservation",
-          name: t("My Reservation"),
-          icon: <BiBookBookmark />,
+          name: t("Room"),
+          icon: <FaBuilding />,
         },
       ],
     },
@@ -93,7 +103,6 @@ const SideBar = ({ children }) => {
     },
   ];
 
-   
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const inputAnimation = {
@@ -130,25 +139,25 @@ const SideBar = ({ children }) => {
     },
   };
 
-   async function showTeacherInput() {
-     setemail(JSON.parse(localStorage.getItem("userEmail")));
-     const Temail = { email };
-     // console.log(Temail)
+  async function showTeacherInput() {
+    setemail(JSON.parse(localStorage.getItem("userEmail")));
+    const Temail = { email };
+    // console.log(Temail)
 
-     // console.log(email);
-     let result = await fetch("http://localhost:8000/api/showeteacher", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-         Accept: "application/json",
-       },
-       body: JSON.stringify(Temail),
-     });
-     result = await result.json();
-     console.log(result);
-     setfirstName(result.firstname);
-     setlastName(result.lastname);
-   }
+    // console.log(email);
+    let result = await fetch("http://localhost:8000/api/showeteacher", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(Temail),
+    });
+    result = await result.json();
+    console.log(result);
+    setfirstName(result.firstname);
+    setlastName(result.lastname);
+  }
 
   return (
     <>
@@ -171,8 +180,10 @@ const SideBar = ({ children }) => {
             </div>
             <div className={!isOpen ? "hide" : "profile"}>
               <img src={avatar} />
-              <h5>{firstName} { lastName}</h5>
-              <p>{t('Teacher_type')}</p>
+              <h5>
+                {firstName} {lastName}
+              </h5>
+              <p>{t("Teacher_type")}</p>
             </div>
 
             {/* <AnimatePresence>

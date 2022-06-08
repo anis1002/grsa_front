@@ -123,7 +123,6 @@ function ConsultReservation() {
               <input type="color" id="body" name="body" value="#f6b73c" />
               {/* <label for="body">Body</label> */}
             {/* </div>  */}
-            <h4 className={styleConsult.title}>{t("Consult Booking")}</h4>
           </div>
           {/* <dir><input type="time" /></dir> */}
 
@@ -132,11 +131,12 @@ function ConsultReservation() {
             // onClick={availableRooms}
             className={styleConsult.button}
             onClick={showAllReservation}
-          >
+            >
             Search
           </button> */}
 
           <div className={styleConsult.logoConstantine}>
+          <h4 className={styleConsult.title}>{t("Consult Booking")}</h4>
             <img src={logo} className={styleConsult.logo} />
           </div>
         </div>

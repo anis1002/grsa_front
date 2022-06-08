@@ -1,10 +1,10 @@
 import React from "react";
 // import { useNavigate } from "react-router-dom";
-import styles from "../../Styles/ReserveMaterial.module.css";
+import styles from "../../Styles/EditMaterialRes.module.css";
 import { useEffect, useState } from "react";
 // import axios from "axios";
 //table imports
-// import "../../Styles/Tables.css";
+import "../../Styles/Tables.css";
 // import { useNavigate } from "react-router-dom";
 //table imports
 import reservationIng from "../../Img/3-1.png";
@@ -15,11 +15,13 @@ import { getElementError } from "@testing-library/react";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import { ImCheckboxChecked } from "react-icons/im";
 import { GiStairsGoal } from "react-icons/gi";
-import { useTranslation } from "react-i18next";
 import { MdOutlineReduceCapacity } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-function ReserveMaterial() {
-  const [material_id, setmaterial_id] = useState("");
+function EditMaterailRes() {
+  const { t } = useTranslation();
+  // const navigate = useNavigate();
   const [timing, settiming] = useState([]);
   const [date, setdate] = useState("");
   const [hour, sethour] = useState("");
@@ -28,43 +30,38 @@ function ReserveMaterial() {
   const [reserved, setreserved] = useState(false);
   const [reservId, setresevId] = useState([]);
   const [saveIcon, setsaveIcon] = useState(false);
-  const { t } = useTranslation();
+  const [id, setid] = useState("");
 
   let rows = JSON.parse(localStorage.getItem("AvaMaterial"));
   let email = JSON.parse(localStorage.getItem("userEmail"));
 
   const [elements, setelements] = useState([]);
-  // console.log(material_id);
 
   useEffect(() => {
     fetch("http://localhost:8000/api/returntiming")
       .then((res) => res.json())
       .then((data) => settiming(data));
-    // availableRooms()
-    // navigate("/Teacher/AddReservation")
-    availableRooms();
+
+    availableMaterial();
   }, [hour, date]);
+  useEffect(() => {
+    setid(JSON.parse(localStorage.getItem("reservationIdMaterial")));
+  }, [id]);
 
   function deleteRow(material_id) {
     rows = rows.filter((row) => row.id != material_id);
-    // console.log(rows);
+
     localStorage.setItem("AvaMaterial", JSON.stringify(rows));
     setelements(rows);
-    // return
-    // availableRooms()
-    // window.location.reload(true)
-    // rows = JSON.parse(localStorage.getItem("AvaMaterial"));
+
     setreserved(false);
   }
 
   async function reservation(material_id) {
-    // availableRooms
-    // let hour = document.getElementById("tempHiddenInput").value;
-    const addReservationInfo = { date, hour, email, material_id };
-    // console.log(addReservationInfo);
-    // console.log(JSON.stringify(addReservationInfo));
+    const addReservationInfo = { material_id, date, hour, email, id };
+
     let result = await fetch(
-      "http://localhost:8000/api/addreservationmaterial",
+      "http://localhost:8000/api/updatereservationmaterial",
       {
         method: "POST",
         headers: {
@@ -74,24 +71,17 @@ function ReserveMaterial() {
         body: JSON.stringify(addReservationInfo),
       }
     );
-    // result = await result.json();
-    // console.log(result)
-    // <Navigate to="/Teacher/AddReservation" />;
-    // deleteRow(room_id);
-    // setTimeout(function () {
-    alert("Material Booked");
+
+    alert("Booking Updated");
     deleteRow(material_id);
-    // }, 1000);
   }
 
-  async function availableRooms() {
-    // window.location.reload(false);
+  async function availableMaterial() {
     if (date == "" || hour == "") {
-      // console.log("error");
       setavailable(false);
     } else {
-      let reservationInfo = { date, hour /*, roomType */ };
-      // console.log(reservationInfo);
+      let reservationInfo = { date, hour };
+
       let result = await fetch("http://localhost:8000/api/availablematerials", {
         method: "POST",
         headers: {
@@ -101,22 +91,13 @@ function ReserveMaterial() {
         body: JSON.stringify(reservationInfo),
       });
       result = await result.json();
-      console.log(result);
+      console.log(result)
 
       localStorage.setItem("AvaMaterial", JSON.stringify(result));
 
-      // setelements(result)
-      // console.log(result)
-
-      // window.location.reload();
-
-      // localStorage.setItem("AvailableRooms",true);
-      // console.log(result);
       setavailable(true);
 
       setelements(JSON.parse(localStorage.getItem("AvaMaterial")));
-
-      //  console.log(elements)
     }
   }
 
@@ -124,7 +105,7 @@ function ReserveMaterial() {
     <div className={styles.main_container}>
       <div className={styles.resvation_container}>
         <div className={styles.input_field}>
-          <div>
+          <dir>
             <input
               type="date"
               onChange={(event) => {
@@ -132,7 +113,7 @@ function ReserveMaterial() {
               }}
               value={date}
             />
-          </div>
+          </dir>
 
           <select
             onChange={(event) => {
@@ -155,7 +136,7 @@ function ReserveMaterial() {
               </option>
             ))}
           </select>
-          <p className={styles.title}>{t("Book Material")}</p>
+          <p className={styles.title}>{t("Edit Material Booking")}</p>
 
           <div className={styles.logoConstantine}>
             <img src={logo} className={styles.logo} />
@@ -163,9 +144,9 @@ function ReserveMaterial() {
         </div>
 
         <div className={styles.content}>
-          {/* <div className={styles.resversationImg}>
+          <div className={styles.resversationImg}>
             <img src={reservationIng} />
-          </div> */}
+          </div>
           <div className={styles.table}>
             <table className={styles.keywords}>
               <thead className={styles.tableHead}>
@@ -203,27 +184,24 @@ function ReserveMaterial() {
                         <span className={styles.stairesLogo}></span>
                       </td>
 
-                      <td
-                      //   className={styles.tdContainer}
-                      >
-                        {row.state}
-                      </td>
+                      <td>{row.state}</td>
 
                       <td>
-                        <button
-                          value={row.id}
-                          className={`${styles.button} 
+                        <Link to="/Teacher/MaterialReservation">
+                          <button
+                            value={row.id}
+                            className={`${styles.button} 
                              
                             `}
-                          onClick={(e) => {
-                            setresevId(e.target.value);
-                            setmaterial_id(row.id);
+                            onClick={(e) => {
+                              setresevId(e.target.value);
 
-                            reservation(row.id);
-                          }}
-                        >
-                          {t("Reserve")}
-                        </button>
+                              reservation(row.id);
+                            }}
+                          >
+                            {t("Update")}
+                          </button>
+                        </Link>
                       </td>
                     </tr>
                   ))
@@ -239,4 +217,4 @@ function ReserveMaterial() {
   );
 }
 
-export default ReserveMaterial;
+export default EditMaterailRes;

@@ -29,6 +29,8 @@ import ContactOwner from "./Components/Teacher/Pages/ContactOwner";
 import ReserveMaterial from "./Components/Teacher/Pages/ReserveMaterial";
 import RecievedMessages from "./Components/Teacher/Pages/RecievedMessages";
 import EditProfileP from "./Components/PerAdmin/Pages/EditProfile";
+import MyMaterialRes from "./Components/Teacher/Pages/MyMaterialRes";
+import EditMaterailRes from "./Components/Teacher/Pages/EditMaterailRes";
 
 
 function App() {
@@ -123,7 +125,17 @@ function App() {
               path="/Teacher/RecievedMessages"
               element={<RecievedMessages />}
             />
+
             <Route path="/Teacher/ContactOwner" element={<ContactOwner />} />
+            <Route
+              path="/Teacher/MaterialReservation"
+              element={<MyMaterialRes />}
+            />
+
+            <Route
+              path="/Teacher/EditMaterailRes"
+              element={<EditMaterailRes />}
+            />
             <Route path="/Teacher/EditProfile" element={<EditProfileT />} />
             <Route
               path="/Teacher/ReserveMaterial"

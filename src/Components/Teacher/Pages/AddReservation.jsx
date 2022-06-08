@@ -192,13 +192,14 @@ function AddReservation() {
               </option>
             ))}
           </select>
-          <p className={styles.title}>{t("Add Booking")}</p>
+         
           {/* <dir><input type="text" /></dir> */}
           {/* <button onClick={availableRooms} className={styles.button}>
             Search
           </button> */}
 
           <div className={styles.logoConstantine}>
+            <p className={styles.title}>{t("Add Booking")}</p>
             <img src={logo} className={styles.logo} />
           </div>
         </div>
@@ -221,7 +222,9 @@ function AddReservation() {
                     <span>{t("Floor")}</span>
                   </th>
                   <th>
-                    <span>{t("Action")}</span>
+                    <span>
+                      {/* {t("Action")} */}
+                    </span>
                   </th>
                   <th></th>
                 </tr>
@@ -259,7 +262,9 @@ function AddReservation() {
                     .filter((val) => val.roomname.includes(roomType))
                     .map((row) => (
                       <tr key={row.id}>
-                        <td className={styles.roomname}>{row.roomname.toUpperCase()}</td>
+                        <td className={styles.roomname}>
+                          {row.roomname.toUpperCase()}
+                        </td>
 
                         <td>
                           {row.capacity}

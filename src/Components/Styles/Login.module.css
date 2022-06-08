@@ -1,7 +1,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"); */
 @import url("../font/stylesheet.css");
-*{
-  font-family: 'Roboto';
+* {
+  font-family: "Roboto";
 }
 .The_Main_page {
   width: 100%;
@@ -11,10 +11,12 @@
   align-items: center;
   /* font-family: "Montserrat", sans-serif; */
   background-image: url("../Img/Wave.svg");
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .lang {
   position: absolute;
   top: 5%;
@@ -24,17 +26,17 @@
   background-color: aqua; */
 }
 
-
 .Login_Container {
   border-radius: 20px;
   width: 700px;
   height: 450px;
-  background-color: #ffffff;
+  background-color: #fff;
   /* border: 1px solid #2d2d2d; */
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: relative;
 }
 .subtitle {
   font-size: 15px;
@@ -58,8 +60,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  /* width: 50%;
-  height: 100%; */
+  /* height: 100%; */
 }
 .select_field {
   width: auto;
@@ -273,8 +274,8 @@ label {
 } */
 
 .btn {
-  width:250px;
-  height:50px;
+  width: 250px;
+  height: 50px;
   background: #ffffff;
   /* background-color: transparent; */
   border: 2px solid #008080;
@@ -303,7 +304,7 @@ label {
   transition: 0.3s all ease-in;
   /* letter-spacing: 3px; */
   margin-bottom: 4%;
-   /* padding: 11px 4px; */
+  /* padding: 11px 4px; */
 }
 
 .btn:hover,
@@ -346,4 +347,59 @@ label {
 }
 .login_choose {
   font-size: 10px;
+}
+
+@media all and (max-width: 772px) {
+  .Login_Container {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 664px) {
+  .img_size {
+    display: none;
+  }
+  .select_field {
+    width: 100%;
+  }
+  .select_field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* background-color: aqua; */
+  }
+  .Login_Info_Container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+  .btns {
+    width: 100%;
+  }
+
+  .login_choose {
+    position: absolute;
+    /* width: 100%; */
+    /* background-color: aqua; */
+    left: 50%;
+    transform: translateX(50%);
+
+    /* display: none; */
+  }
+  .lang {
+    right: 20%;
+    /* transform: translateX(50%); */
+  }
+}
+@media all and (max-width: 338px) {
+  .btn {
+    width: 200px;
+    height: 45px;
+  }
 }
