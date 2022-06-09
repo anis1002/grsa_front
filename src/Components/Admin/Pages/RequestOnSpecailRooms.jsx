@@ -3,6 +3,7 @@ import logo from "../../Img/logo.png";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import avatar from "../../Img/teacher.webp";
+import { ImCross, ImCheckmark } from "react-icons/im";
 function RequestOnSpecailRooms() {
   const [name, setname] = useState("");
   const [emailSend, setemailSend] = useState("");
@@ -12,18 +13,17 @@ function RequestOnSpecailRooms() {
 
   function allRequest() {
     fetch("http://localhost:8000/api/AllRequest")
-    .then((res) => res.json())
-    .then((data) => setelement(data));
+      .then((res) => res.json())
+      .then((data) => setelement(data));
     setavailable(true);
   }
-  
+
   useEffect(() => {
     setemailSend(JSON.parse(localStorage.getItem("userEmail")));
     allRequest();
-    
   }, [available]);
-  
-  console.log(element)
+
+  console.log(element);
   return (
     <div className={`${styles.main_container} `}>
       <div className={styles.top_bar}>
@@ -61,8 +61,15 @@ function RequestOnSpecailRooms() {
                   <div className={styles.downPart}>
                     <p className={styles.messageContent}>
                       Request For special Room
-                      <span className={styles.info}>{row.roomname.toUpperCase()}</span> In:{" "}
-                      <span className={styles.info}> {row.reservationdate}</span> At:
+                      <span className={styles.info}>
+                        {row.roomname.toUpperCase()}
+                      </span>{" "}
+                      In:{" "}
+                      <span className={styles.info}>
+                        {" "}
+                        {row.reservationdate}
+                      </span>{" "}
+                      At:
                       <span className={styles.info}>
                         {" "}
                         {
@@ -71,10 +78,9 @@ function RequestOnSpecailRooms() {
                             `${t("H")}`
                           ))
                         }
-                      </span> 
-                      -
+                        -
+                      </span>
                       <span className={styles.info}>
-                        
                         {
                           (row.endtime = row.endtime.replace(
                             ":00:00",
@@ -83,6 +89,15 @@ function RequestOnSpecailRooms() {
                         }
                       </span>
                     </p>
+                  </div>
+
+                  <div className={styles.buttons}>
+                    <button className={`${styles.button1} ${styles.btns}`}>
+                      <ImCheckmark />
+                    </button>
+                    <button className={`${styles.button2} ${styles.btns}`}>
+                      <ImCross />
+                    </button>
                   </div>
                 </div>
               ))

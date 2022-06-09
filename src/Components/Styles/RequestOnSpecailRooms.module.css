@@ -14,11 +14,71 @@
   /* background-color: black; */
   position: relative;
 }
+
+.buttons{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 0%;
+    height: 100%;
+  
+    width: 10%;
+    /* background-color: transparent; */
+
+}
+.btn{
+    background-color: transparent;
+}
+.button1{
+    padding-top: 100%;
+    padding-bottom: 100%;
+    /* padding: 0px 20px; */
+
+    color: white;
+    padding-left: 10px;
+    /* margin-right:10px ; */
+    padding-right:10px;
+    background:transparent;
+    
+    
+    
+}
+.button2{
+    background:transparent;
+    padding-top: 100%;
+    padding-bottom: 100%;
+    padding-left: 10px;
+    padding-right:10px;
+   
+    color: red;
+    /* background-color: antiquewhite; */
+    transition: .2s;
+    
+    
+    
+
+}
+.button2:hover{
+    /* font-size: 20px;
+     *
+     /
+    /* background-color: red;
+    color: white; */
+    opacity: .5;
+
+}
+.button1:hover{
+      /* background-color:white;
+    color:#008080; */
+  opacity: .5;
+}
 .table {
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center; */
     /* flex-direction: column; */
+    /* background-color: #e48572; */
   position: relative;
   top: 10%;
   left: 50%;
@@ -290,6 +350,7 @@ label {
 
 .card{
 display: flex;
+overflow: hidden;
 background-color: #008080;
 flex-direction: column;
 width: 70%;
