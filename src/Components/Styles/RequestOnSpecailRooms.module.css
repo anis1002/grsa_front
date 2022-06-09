@@ -42,6 +42,13 @@
   /* justify-content: center; */
   position: relative;
 }
+.info{
+    font-weight: bold;
+    color: #e48572;
+}
+.messageContent{
+    margin-left: 2%;
+}
 .logo {
   position: absolute;
   width: 50px;
@@ -320,6 +327,8 @@ margin-left: 15%;
     position: absolute;
     left: 53%;
     bottom: 0;
+    /* font-size:; */
+    /* text-align: center; */
     transform: translateX(-50%);
     width: 80%;
     /* background-color:red; */

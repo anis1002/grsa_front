@@ -77,10 +77,10 @@ function AddReservation() {
     setreserved(false);
   }
 
-  async function reservation(room_id) {
+  async function reservation(room_id,type) {
     // availableRooms
     // let hour = document.getElementById("tempHiddenInput").value;
-    const addReservationInfo = { room_id, date, hour, email, id };
+    const addReservationInfo = { room_id, date, hour, email, id ,type};
     // console.log(addReservationInfo);
     // console.log(JSON.stringify(addReservationInfo));
     let result = await fetch("http://localhost:8000/api/updatereservation", {
@@ -286,7 +286,8 @@ function AddReservation() {
                               onClick={(e) => {
                                 setresevId(e.target.value);
                                 // setreserved(true);
-                                reservation(row.id);
+                                reservation(row.id,row.type);
+                                // console.log(row.type)
                                 // show(true);
                                 // setsaveIcon(true);
                               }}

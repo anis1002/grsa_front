@@ -59,22 +59,29 @@ function RequestOnSpecailRooms() {
                     {/* <p>{row.reservationdate}</p> */}
                   </div>
                   <div className={styles.downPart}>
-                    <p>
-                      Request For special Room{row.roomname.toUpperCase()} In:{" "}
-                      {row.reservationdate} At:
-                      {
-                        (row.starttime = row.starttime.replace(
-                          ":00:00",
-                          `${t("H")}`
-                        ))
-                      }
+                    <p className={styles.messageContent}>
+                      Request For special Room
+                      <span className={styles.info}>{row.roomname.toUpperCase()}</span> In:{" "}
+                      <span className={styles.info}> {row.reservationdate}</span> At:
+                      <span className={styles.info}>
+                        {" "}
+                        {
+                          (row.starttime = row.starttime.replace(
+                            ":00:00",
+                            `${t("H")}`
+                          ))
+                        }
+                      </span> 
                       -
-                      {
-                        (row.endtime = row.endtime.replace(
-                          ":00:00",
-                          `${t("H")}`
-                        ))
-                      }
+                      <span className={styles.info}>
+                        
+                        {
+                          (row.endtime = row.endtime.replace(
+                            ":00:00",
+                            `${t("H")}`
+                          ))
+                        }
+                      </span>
                     </p>
                   </div>
                 </div>
