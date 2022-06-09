@@ -15,6 +15,7 @@ import { getElementError } from "@testing-library/react";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import { ImCheckboxChecked } from "react-icons/im";
 import { GiStairsGoal } from "react-icons/gi";
+import { AiFillStar } from "react-icons/ai";
 import { MdOutlineReduceCapacity } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -91,12 +92,12 @@ function AddReservation() {
       },
       body: JSON.stringify(addReservationInfo),
     });
-    // result = await result.json();
+    result = await result.json();
     // console.log(result)
     // <Navigate to="/Teacher/AddReservation" />;
     // deleteRow(room_id);
     // setTimeout(function () {
-    alert("Booking Updated");
+    alert(result);
     deleteRow(room_id);
     // }, 1000);
   }
@@ -262,7 +263,16 @@ function AddReservation() {
                     .filter((val) => val.roomname.includes(roomType))
                     .map((row) => (
                       <tr key={row.id}>
-                        <td className={styles.roomname}>{row.roomname.toUpperCase()}</td>
+                        <td className={styles.roomname}>
+                          {row.roomname.toUpperCase()}
+                          <span
+                            className={
+                              row.type == "s" ? styles.show : styles.hide
+                            }
+                          >
+                            <AiFillStar />
+                          </span>
+                        </td>
 
                         <td>
                           {row.capacity}
@@ -286,7 +296,7 @@ function AddReservation() {
                               onClick={(e) => {
                                 setresevId(e.target.value);
                                 // setreserved(true);
-                                reservation(row.id,row.type);
+                                reservation(row.id, row.type);
                                 // console.log(row.type)
                                 // show(true);
                                 // setsaveIcon(true);
