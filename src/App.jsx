@@ -16,6 +16,7 @@ import AddMaterial from "./Components/Admin/Pages/AddMaterial";
 import DeleteMaterial from "./Components/Admin/Pages/DeleteMaterial";
 import EditProfileT from "./Components/Teacher/Pages/EditProfile";
 import EditProfileA from "./Components/Admin/Pages/EditProfileA";
+import RequestOnSpecailRooms from "./Components/Admin/Pages/RequestOnSpecailRooms";
 import AddTeacher from "./Components/Admin/Pages/AddTeacher";
 import EditTeacher from "./Components/Admin/Pages/EditTeacher";
 import DeleteTeacher from "./Components/Admin/Pages/DeleteTeacher";
@@ -189,6 +190,10 @@ function App() {
               path="/Administrator/EditProfile"
               element={<EditProfileA />}
               _
+            />
+            <Route
+              path="/Administrator/RequestOnSpecailRooms"
+              element={<RequestOnSpecailRooms />}
             />
             <Route path="/Administrator/Logout" element={<Logout />} />
           </Route>

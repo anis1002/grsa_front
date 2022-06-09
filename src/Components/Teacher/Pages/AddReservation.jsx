@@ -15,6 +15,7 @@ import { getElementError } from "@testing-library/react";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import { ImCheckboxChecked } from "react-icons/im";
 import { GiStairsGoal } from "react-icons/gi";
+import { AiFillStar } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import {
   
@@ -24,6 +25,7 @@ import {
 function AddReservation() {
   // const navigate = useNavigate();
   const [timing, settiming] = useState([]);
+  // const [star, setstar] = useState("");
   const [date, setdate] = useState("");
   const [hour, sethour] = useState("");
   const [available, setavailable] = useState(false);
@@ -74,10 +76,10 @@ function AddReservation() {
     setreserved(false);
   }
 
-  async function reservation(room_id) {
+  async function reservation(room_id,type) {
     // availableRooms
     // let hour = document.getElementById("tempHiddenInput").value;
-    const addReservationInfo = { room_id, date, hour, email };
+    const addReservationInfo = { room_id, date, hour, email,type };
     // console.log(addReservationInfo);
     // console.log(JSON.stringify(addReservationInfo));
     let result = await fetch("http://localhost:8000/api/addreservation", {
@@ -88,12 +90,12 @@ function AddReservation() {
       },
       body: JSON.stringify(addReservationInfo),
     });
-    // result = await result.json();
+    result = await result.json();
     // console.log(result)
     // <Navigate to="/Teacher/AddReservation" />;
     // deleteRow(room_id);
     // setTimeout(function () {
-    alert("Room booked ");
+    alert(result)
     deleteRow(room_id);
     // }, 1000);
   }
@@ -192,7 +194,7 @@ function AddReservation() {
               </option>
             ))}
           </select>
-         
+
           {/* <dir><input type="text" /></dir> */}
           {/* <button onClick={availableRooms} className={styles.button}>
             Search
@@ -222,41 +224,13 @@ function AddReservation() {
                     <span>{t("Floor")}</span>
                   </th>
                   <th>
-                    <span>
-                      {/* {t("Action")} */}
-                    </span>
+                    <span>{/* {t("Action")} */}</span>
                   </th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                {/* {available ? (
-                  rows
-                    .filter((val) => val.roomname.includes(roomType))
-                    .map((row) => (
-                      <tr key={row.id}>
-                        <td>{row.roomname}</td>
-                        <td>{row.capacity}</td>
-                        <td>{row.floor}</td>
-                        <td>
-                          <button
-                            value={row.id}
-                            className={`${styles.button}`}
-                            onClick={() => {
-                              reservation(row.id);
-                            }}
-                            // disabled={disable}
-                            disabled={disabledButton ? "true" : ""}
-                          >
-                            Reserve
-                          </button>
-                        </td>
-                      </tr>
-                    ))
-                ) : (
-                  <></>
-                )} */}
-
+          
                 {available ? (
                   elements
                     .filter((val) => val.roomname.includes(roomType))
@@ -264,6 +238,11 @@ function AddReservation() {
                       <tr key={row.id}>
                         <td className={styles.roomname}>
                           {row.roomname.toUpperCase()}
+                          <span
+                            className={row.type=="s"? styles.show : styles.hide}
+                          >
+                            <AiFillStar />
+                          </span>
                         </td>
 
                         <td>
@@ -287,7 +266,8 @@ function AddReservation() {
                             onClick={(e) => {
                               setresevId(e.target.value);
                               // setreserved(true);
-                              reservation(row.id);
+                              reservation(row.id, row.type);
+                              // console.log(row.type)
                               // show(true);
                               // setsaveIcon(true);
                             }}

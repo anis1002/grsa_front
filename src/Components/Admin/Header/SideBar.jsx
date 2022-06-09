@@ -99,6 +99,11 @@ const routes = [
     icon: <GiArchiveResearch />,
   },
   {
+    path: "/Administrator/RequestOnSpecailRooms",
+    name: t("Request On Speacial Rooms"),
+    icon: <FaSignOutAlt />,
+  },
+  {
     path: "/Administrator/Logout",
     name: t("Logout"),
     icon: <FaSignOutAlt />,
