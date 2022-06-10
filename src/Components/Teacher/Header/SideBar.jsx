@@ -43,7 +43,7 @@ const SideBar = ({ children }) => {
     {
       path: "/Teacher/EditProfile",
       name: t("Edit Profile"),
-      icon: <FaSignOutAlt />,
+      icon: <FaCog />,
     },
     {
       path: "/",
@@ -154,7 +154,7 @@ const SideBar = ({ children }) => {
       body: JSON.stringify(Temail),
     });
     result = await result.json();
-    console.log(result);
+    // console.log(result);
     setfirstName(result.firstname);
     setlastName(result.lastname);
   }

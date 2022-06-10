@@ -73,7 +73,7 @@ function MyMaterialRes() {
       );
       result = await result.json();
 
-      console.log(JSON.stringify(idR));
+      // console.log(JSON.stringify(idR));
       alert(result);
       deleteRow(id);
     } else {
@@ -90,7 +90,7 @@ function MyMaterialRes() {
 
   async function yourReservation() {
     if (date == "") {
-      console.log("error");
+      // console.log("error");
     } else {
       let reservationInfo = { date, email };
 

@@ -37,7 +37,7 @@ const EditProfileT = () => {
       body: JSON.stringify(Temail),
     });
     result = await result.json();
-    console.log(result);
+    // console.log(result);
     setfirstName(result.firstname);
     setlastName(result.lastname);
     setphoneNumber(result.phonenumber);

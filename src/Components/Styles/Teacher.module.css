@@ -98,6 +98,7 @@
 }
 .select{
   direction:  rtl;
+  width: 15%;
 } 
 .resversationImg {
   display: flex;
@@ -239,6 +240,7 @@
 }
 
 .filter {
+  border: 1px solid #008080;
   outline: 0;
   width: 200px;
   height: 35px;

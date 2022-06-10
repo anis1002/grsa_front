@@ -8,6 +8,8 @@ import { MdCancelScheduleSend } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import avatar from "../../Img/teacher.webp";
+import avatarA from "../../Img/Admin.png";
+import { ImCross} from "react-icons/im";
 // import RecievedMessages from './RecievedMessages';
 
 const RecievedMessages = () => {
@@ -44,6 +46,22 @@ const RecievedMessages = () => {
     // setavailable(true)
   }, [available]);
 
+  async function deleteComment(id) {
+     const commentNeeds = { id };
+     let result = await fetch("http://localhost:8000/api/Deletmessage", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+         Accept: "application/json",
+       },
+       body: JSON.stringify(commentNeeds),
+     });
+     result = await result.json();
+    // console.log(id)
+    comments()
+  }
+  // console.log(element)
+
   return (
     <div className={`${styles.main_container} `}>
       <div className={styles.top_bar}>
@@ -74,12 +92,25 @@ const RecievedMessages = () => {
               .map((row, index) => (
                 <div className={styles.card} key={index}>
                   <div className={styles.upPart}>
-                    <img src={avatar} />
+                    <img src={row.email_sender == "admin" ? avatarA : avatar} />
                     <p>{row.email_sender}</p>
                     <p>{row.created_at}</p>
                   </div>
                   <div className={styles.downPart}>
                     <p>{row.message}</p>
+                  </div>
+
+                  <div className={styles.buttons}>
+                    <button
+                      className={`${styles.button2} ${styles.btns}`}
+                      onClick={() => {
+                        // console.log("delete");
+                        deleteComment(row.id)
+                        // refuseRequest(row.teacher_email, row.id, row.room_id);
+                      }}
+                    >
+                      <ImCross />
+                    </button>
                   </div>
                 </div>
               ))

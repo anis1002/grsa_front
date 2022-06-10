@@ -52,7 +52,8 @@ const EditProfileA = () => {
     });
     result = await result.json();
     // console.log(result)
-   alert(result)
+    alert(result)
+    console.log(result)
   }
   return (
     <div className={styles.mainPage}>

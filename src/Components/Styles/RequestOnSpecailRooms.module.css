@@ -105,6 +105,11 @@
 .info{
     font-weight: bold;
     color: #e48572;
+    margin: 0 5px;
+}
+.Line{
+font-weight: bold;
+    color: #e48572;
 }
 .messageContent{
     margin-left: 2%;

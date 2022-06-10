@@ -374,7 +374,7 @@ const AddTeacher = () => {
                 // empty();
                 // setPopup(false);
                 setshow(true);
-                setblur(false);
+                // setblur(false);
                 // setshow(true)
               }}
             >

@@ -91,7 +91,7 @@ function EditMaterailRes() {
         body: JSON.stringify(reservationInfo),
       });
       result = await result.json();
-      console.log(result)
+      // console.log(result)
 
       localStorage.setItem("AvaMaterial", JSON.stringify(result));
 

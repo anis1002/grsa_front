@@ -22,8 +22,40 @@ function RequestOnSpecailRooms() {
     setemailSend(JSON.parse(localStorage.getItem("userEmail")));
     allRequest();
   }, [available]);
+  async function refuseRequest(emailRe,id,room_id)
+  {
+    
+    let info = {emailRe,id,room_id}
+     let result = await fetch("http://localhost:8000/api/DeletRequest", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+         Accept: "application/json",
+       },
+       body: JSON.stringify(info),
+     });
+    result = await result.json();
+    alert(result)
+    allRequest()
+    // console.log(emailRe,id,room_id)
+    // alert("Successfully Refused");
+  }
+  async function acceptRequest(emailRe, id, room_id) {
+    let info = { emailRe, id, room_id };
+    let result = await fetch("http://localhost:8000/api/AcceptRequest", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(info),
+    });
+    result = await result.json();
+    alert(result);
+    allRequest();
+  }
 
-  console.log(element);
+  // console.log(element);
   return (
     <div className={`${styles.main_container} `}>
       <div className={styles.top_bar}>
@@ -78,8 +110,8 @@ function RequestOnSpecailRooms() {
                             `${t("H")}`
                           ))
                         }
-                        -
                       </span>
+                      <span className={styles.Line}>-</span>
                       <span className={styles.info}>
                         {
                           (row.endtime = row.endtime.replace(
@@ -92,10 +124,23 @@ function RequestOnSpecailRooms() {
                   </div>
 
                   <div className={styles.buttons}>
-                    <button className={`${styles.button1} ${styles.btns}`}>
+                    <button
+                      className={`${styles.button1} ${styles.btns}`}
+                      onClick={() => {
+                        console.log("accept");
+                        acceptRequest(row.teacher_email, row.id, row.room_id);
+
+                      }}
+                    >
                       <ImCheckmark />
                     </button>
-                    <button className={`${styles.button2} ${styles.btns}`}>
+                    <button
+                      className={`${styles.button2} ${styles.btns}`}
+                      onClick={() => {
+                        // console.log("delete");
+                        refuseRequest(row.teacher_email,row.id,row.room_id);
+                      }}
+                    >
                       <ImCross />
                     </button>
                   </div>
