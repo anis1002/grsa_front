@@ -9,6 +9,10 @@
   scrollbar-face-color:#999; */
 
 }
+.time{
+   direction:  rtl;
+  
+}
 .main_container {
   display: flex;
   flex-direction: column;
@@ -120,6 +124,7 @@
 }
 .keywords tbody tr:hover{
   background-color: #c8ecd6;
+   /* direction:  rtl; */
 }
 
 .keywords tbody td{

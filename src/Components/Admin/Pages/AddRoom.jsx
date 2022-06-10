@@ -15,6 +15,7 @@ import { GiStairsGoal } from "react-icons/gi";
 import DeleteMaterial from "./DeleteMaterial";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { AiFillStar } from "react-icons/ai";
 
 function AddRoom() {
     const { t } = useTranslation();
@@ -28,7 +29,9 @@ function AddRoom() {
   const [response, setresponse] = useState(false);
   const [Popup, setPopup] = useState(false);
   const [range, setrange] = useState("");
+  const [Typefilter, setTypefilter] = useState("");
 
+  const [type, settype] = useState("");
   const [floor, setfloor] = useState("");
   const [capacity, setcapacity] = useState("");
   const [roomType, setroomType] = useState("");
@@ -38,6 +41,7 @@ function AddRoom() {
     setroomType("");
     setfloor("");
     setcapacity("");
+    settype("")
   }
 
   async function showRoom() {
@@ -74,6 +78,7 @@ function AddRoom() {
       floor,
       capacity,
       roomType,
+      type
     };
     let result = await fetch("http://localhost:8000/api/addroom", {
       method: "POST",
@@ -105,6 +110,7 @@ function AddRoom() {
       capacity,
       floor,
       id,
+      type
     };
     console.log(editRoomInfo);
     let result = await fetch("http://localhost:8000/api/editroom", {
@@ -145,6 +151,7 @@ function AddRoom() {
         setcapacity(rows.capacity);
         setroomType(rows.roomname);
         setid(rows.id);
+        settype(rows.type)
       }
     });
   }
@@ -152,7 +159,20 @@ function AddRoom() {
   return (
     <div className={styles.container}>
       <div className={styles.topcontainer}>
-        <h1 className={blur ? `${styles.blur}` : ""}>{t("Manage Room")}</h1>
+        <select
+          className={styles.filter}
+          onChange={(e) => {
+            setTypefilter(e.target.value);
+          }}
+        >
+          <option value="">{t("All")}</option>
+          <option value="s">{t("Special")}</option>
+          <option value="n">{t("Normal")}</option>
+        </select>
+
+        <h1 className={blur ? `${styles.blur} ${styles.title}` : styles.title}>
+          {t("Manage Room")}
+        </h1>
         <button
           className={blur ? `${styles.blur}` : ""}
           onClick={() => {
@@ -172,8 +192,8 @@ function AddRoom() {
         className={
           // Popup
           //   ? `${styles.blurColor} ${styles.formContainer}`
-            // :
-      styles.formContainer
+          // :
+          styles.formContainer
         }
       >
         {/* add */}
@@ -211,6 +231,23 @@ function AddRoom() {
                   <span className={styles.bar}></span>
                   <label>{t("Capacity")}</label>
                 </div>
+
+                <div className={`${styles.group}`}>
+                  <select
+                    value={type}
+                    className={`${styles.Selection}`}
+                    onChange={(e) => {
+                      settype(e.target.value);
+                    }}
+                  >
+                    <option value="" disabled selected>
+                      {t("Type")}
+                    </option>
+                    <option value="s">{t("Special")}</option>
+                    <option value="n">{t("Normal")}</option>
+                  </select>
+                </div>
+
                 <div className={`${styles.group}`}>
                   <select
                     value={floor}
@@ -343,6 +380,22 @@ function AddRoom() {
                   <span className={styles.bar}></span>
                   <label>{t("Capacity")}</label>
                 </div>
+
+                <div className={`${styles.group}`}>
+                  <select
+                    value={type}
+                    className={`${styles.Selection}`}
+                    onChange={(e) => {
+                      settype(e.target.value);
+                    }}
+                  >
+                    <option value="" disabled selected>
+                      {t("Type")}
+                    </option>
+                    <option value="s">{t("Special")} </option>
+                    <option value="n">{t("Normal")}</option>
+                  </select>
+                </div>
                 <div className={`${styles.group}`}>
                   <select
                     value={floor}
@@ -412,55 +465,64 @@ function AddRoom() {
             </tr>
           </thead>
           <tbody className={styles.tbody}>
-            {row.map((rows, index) => (
-              <tr key={index}>
-                <td>{rows.roomname.toUpperCase()}</td>
-                <td>
-                  {rows.capacity}{" "}
-                  <span className={styles.stairs}>
-                    <MdOutlineReduceCapacity />
-                  </span>
-                </td>
-                <td>
-                  {rows.floor}{" "}
-                  <span className={styles.stairs}>
-                    <GiStairsGoal />
-                  </span>
-                </td>
+            {row
+              .filter((val) => val.type.includes(Typefilter))
+              .map((rows, index) => (
+                <tr key={index}>
+                  <td className={styles.roomname}>
+                    {rows.roomname.toUpperCase()}
+                    <span
+                      className={rows.type == "s" ? styles.show : styles.hide}
+                    >
+                      <AiFillStar />
+                    </span>
+                  </td>
+                  <td>
+                    {rows.capacity}{" "}
+                    <span className={styles.stairs}>
+                      <MdOutlineReduceCapacity />
+                    </span>
+                  </td>
+                  <td>
+                    {rows.floor}{" "}
+                    <span className={styles.stairs}>
+                      <GiStairsGoal />
+                    </span>
+                  </td>
 
-                <td>
-                  <button
-                    className={`${styles.btn1} ${styles.btn}`}
-                    onClick={() => {
-                      setPopup(true);
-                      setblur(true);
-                      fieldFill(rows.id);
-                      setshow(false);
-                      setshowAddRoom(false);
-                    }}
-                  >
-                    <AiOutlineEdit />
-                    {/* <span>Edit</span> */}
-                  </button>
+                  <td>
+                    <button
+                      className={`${styles.btn1} ${styles.btn}`}
+                      onClick={() => {
+                        setPopup(true);
+                        setblur(true);
+                        fieldFill(rows.id);
+                        setshow(false);
+                        setshowAddRoom(false);
+                      }}
+                    >
+                      <AiOutlineEdit />
+                      {/* <span>Edit</span> */}
+                    </button>
 
-                  <button
-                    className={`${styles.btn2} ${styles.btn}`}
-                    onClick={() => {
-                      setid(rows.id);
-                      setroomname(rows.roomname);
-                      setPopupdelete(true);
-                      setblur(true);
-                      // setTemail(rows.email);
-                      setshowAddRoom(false);
-                      setPopup(false);
-                    }}
-                  >
-                    <AiOutlineDelete />
-                    {/* <span>Delete</span> */}
-                  </button>
-                </td>
-              </tr>
-            ))}
+                    <button
+                      className={`${styles.btn2} ${styles.btn}`}
+                      onClick={() => {
+                        setid(rows.id);
+                        setroomname(rows.roomname);
+                        setPopupdelete(true);
+                        setblur(true);
+                        // setTemail(rows.email);
+                        setshowAddRoom(false);
+                        setPopup(false);
+                      }}
+                    >
+                      <AiOutlineDelete />
+                      {/* <span>Delete</span> */}
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

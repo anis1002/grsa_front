@@ -224,7 +224,7 @@ function AddReservation() {
                     <span>{t("Floor")}</span>
                   </th>
                   <th>
-                    <span>{/* {t("Action")} */}</span>
+                    
                   </th>
                   <th></th>
                 </tr>

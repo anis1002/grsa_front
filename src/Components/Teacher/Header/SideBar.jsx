@@ -17,6 +17,8 @@ import { MdMessage } from "react-icons/md";
 import { BiAnalyse, BiSearch, BiLaptop, BiBookBookmark } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
 import { GiArchiveResearch } from "react-icons/gi";
+import { MdOutlineChecklistRtl } from "react-icons/md";
+
 import { RiBookMarkFill } from "react-icons/ri";
 import { IoIosChatbubbles } from "react-icons/io";
 import {

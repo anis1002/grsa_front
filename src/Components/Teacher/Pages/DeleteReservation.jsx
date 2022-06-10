@@ -217,7 +217,9 @@ function DeleteReservation() {
                   <th>
                     <span>{t("timing")}</span>
                   </th>
-                  <th>{t("Action")}</th>
+                  <th>
+                    {/* {t("Action")} */}
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -228,7 +230,7 @@ function DeleteReservation() {
                       <tr key={index}>
                         <td>{row.roomname.toUpperCase()}</td>
                         <td>{row.reservationdate}</td>
-                        <td>
+                        <td className={styles.time}>
                           {
                             (row.starttime = row.starttime.replace(
                               ":00:00",

@@ -1,9 +1,17 @@
 {
   "Material Type": "نوع العتاد",
+  "Material": "عتاد",
+  "Room": "قسم",
 
   "Properties": "خصائص",
   "Serial Number": "الرقم التسلسلي",
   "Add Material": "اضافة عتاد",
+  "State of Material": "حالة العتاد",
+  "Request On Speacial Rooms": "الطلبات الاقسام الخاصة",
+
+  "Normal": "عادي",
+  "Special": "خاص",
+  "Type": "نوع القسم",
 
   "Delete Material": "حدف عتاد",
   "Edit Material": "تعديل العتاد",
@@ -91,7 +99,7 @@
   "Prof Td": "استاد اعمال موجهة",
   "Prof Tp": "استاد اعمال تطبيبقية",
   "Prof Cour": "استاد محاضرات",
-  "State": "حالة",
+  "State": "الحالة",
 
   "Secondary": "استاد احتياطي",
   "Principale": "استاد اساسي",

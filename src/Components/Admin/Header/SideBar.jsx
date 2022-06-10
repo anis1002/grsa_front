@@ -12,6 +12,7 @@ import avatar from '../../Img/admin.jpg';
 import { useTranslation } from "react-i18next";
 import { style } from '@mui/system';
 import { GiArchiveResearch } from "react-icons/gi";
+import { MdOutlineChecklistRtl } from "react-icons/md";
 
 
 const SideBar = ({ children }) => {
@@ -101,7 +102,7 @@ const routes = [
   {
     path: "/Administrator/RequestOnSpecailRooms",
     name: t("Request On Speacial Rooms"),
-    icon: <FaSignOutAlt />,
+    icon: <MdOutlineChecklistRtl />,
   },
   {
     path: "/Administrator/Logout",

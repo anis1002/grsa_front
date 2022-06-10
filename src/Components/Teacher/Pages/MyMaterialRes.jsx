@@ -145,7 +145,7 @@ function MyMaterialRes() {
                     <span>{t("Material Type")}</span>
                   </th>
                   <th>
-                    <span>{t("Material State")}</span>
+                    <span>{t("State of Material")}</span>
                   </th>
                   <th>
                     <span>{t("date")}</span>
@@ -153,10 +153,7 @@ function MyMaterialRes() {
                   <th>
                     <span>{t("timing")}</span>
                   </th>
-                  <th>
-                    
-                    {/* {t("Action")} */}
-                  </th>
+                  <th>{/* {t("Action")} */}</th>
                 </tr>
               </thead>
               <tbody>
@@ -168,7 +165,7 @@ function MyMaterialRes() {
                         <td>{row.typematerial.toUpperCase()}</td>
                         <td>{row.state}</td>
                         <td>{row.reservationdate}</td>
-                        <td>
+                        <td className={styles.time}>
                           {
                             (row.starttime = row.starttime.replace(
                               ":00:00",

@@ -11,13 +11,65 @@
   flex-direction: column;
   justify-content: center;
 }
-.topcontainer {
+
+.filter{
+  /* padding: 11px 20px; */
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #008080;
+  outline: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #ffffff;
+  /* position: absolute;
+  top: 0%; */
+  color: #008080;
+  font-weight: bold;
+  /* letter-spacing: 2px; */
+  /* font-family: sans-serif; */
+  border-radius: 4px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      margin-left: 10%;
+}
+.title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.roomname{
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+.topcontainer {
+  position: relative;
+  display: flex;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #10c469; */
+  width: 100%;
+  height: 10%;
 }
 .topcontainer button span {
   font-size: 20px;
   margin-right: 10px;
+}
+.hide{
+  display: none;
+}
+.show{
+  color:#e48572;
+  
+  margin-left:3%;
+  margin-bottom: 1%;
+  display: inline;
 }
 .topcontainer button {
   position: absolute;
@@ -52,8 +104,8 @@
   /* display: block; */
 }
 
-.topcontainer button:hover,
-.topcontainer:active {
+.topcontainer >button:hover,
+.topcontainer>button:active {
   background-color: #008080;
   background-position: 0 0;
   color: #ffffff;
@@ -70,7 +122,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 50px;
+  bottom: 0%;
+  /* margin-bottom: 50px; */
   /* padding: 0; */
   overflow-y: scroll;
   scroll-behavior: smooth;

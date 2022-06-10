@@ -1,5 +1,13 @@
 {
   "Material Type": "Type de Materiau",
+  "Material": "Materiau",
+  "Room": "Salle",
+  "State of Material": "État du matériau",
+  "Request On Speacial Rooms": "Demande Salles Special",
+
+  "Normal": "Normal",
+  "Special": "Special",
+  "Type": "Type",
 
   "Properties": "Propriétés",
   "Serial Number": "Numéro de Série",

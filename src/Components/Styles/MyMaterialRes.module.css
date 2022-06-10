@@ -9,6 +9,10 @@
   scrollbar-face-color:#999; */
 
 }
+.time{
+   direction:  rtl;
+  
+}
 .main_container {
   display: flex;
   flex-direction: column;
