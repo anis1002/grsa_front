@@ -4,6 +4,8 @@
   "Room": "Salle",
   "State of Material": "État du matériau",
   "Request On Speacial Rooms": "Demande Salles Special",
+  "My Material Reservation": "Ma Matériel Réservé",
+  "Edit Material Booking": "Modifier Réservation Material",
 
   "Normal": "Normal",
   "Special": "Special",
@@ -21,7 +23,7 @@
   "Send Message To": "Envoyer un message à",
   "Write Your Message Here": "Ecrivez votre message ici",
 
-  "Edit Material": "Modifier Material",
+  "Edit Material": " Material",
 
   "Good": "Bien",
   "Not Good": "Pas Bien",
@@ -41,6 +43,7 @@
   "Teacher": "Professeur",
   "Administrator": "Administrateur",
   "Administrative Person": "Personne administrative",
+  "Edit Booking": "Modifier Ma Réservations",
 
   "Teacher_type": "Professeur",
   "Edit Profile": "Modifier le profil",
@@ -60,7 +63,7 @@
   "Tp": "Tp",
   "Amphi": "Amphi",
   "Consult Booking": "Consulter Réservation",
-  "All": "Tout",
+  "All": "Tous",
   "Add Booking": "Ajouter une réservation",
   "Select a Timing": "Sélectionnez un creneau",
 
@@ -72,7 +75,7 @@
   "date": "date",
   "timing": "Creneau",
 
-  "Edit": "Editer",
+  "Edit": "Modifier",
   "Delete": "Supprimer",
   "Update": "Mise à jour",
 

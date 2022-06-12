@@ -4,6 +4,7 @@ import styleConsult from "../../Styles/ConsultTable.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { AiFillStar } from "react-icons/ai";
 
 function ConsultReservation() {
   const [date, setdate] = useState("");
@@ -118,6 +119,8 @@ function ConsultReservation() {
               <option value="td">{t("Td")}</option>
               <option value="tp">{t("Tp")}</option>
               <option value="amphi">{t("Amphi")}</option>
+              <option value="s">{t("Speacial")}</option>
+              <option value="n">{t("Normal")}</option>
             </select>
             {/* <div className={styleConsult.colorRange}>
               <input type="color" id="body" name="body" value="#f6b73c" />
@@ -136,7 +139,7 @@ function ConsultReservation() {
           </button> */}
 
           <div className={styleConsult.logoConstantine}>
-          <h4 className={styleConsult.title}>{t("Consult Booking")}</h4>
+            <h4 className={styleConsult.title}>{t("Consult Booking")}</h4>
             <img src={logo} className={styleConsult.logo} />
           </div>
         </div>
@@ -168,11 +171,23 @@ function ConsultReservation() {
             <tbody>
               {available ? (
                 rows
-                  .filter((val) => val.roomname.includes(type))
+                  .filter(
+                    (val) =>
+                      val.roomname.includes(type) || val.type.includes(type)
+                  )
                   .map((room) => (
                     <tr key={room.room_id} className={styleConsult.tr}>
                       <td className={styleConsult.td}>
                         {room.roomname.toUpperCase()}
+                        <span
+                          className={
+                            room.type == "s"
+                              ? styleConsult.show
+                              : styleConsult.hide
+                          }
+                        >
+                          <AiFillStar />
+                        </span>
                       </td>
                       <td
                         className={`${

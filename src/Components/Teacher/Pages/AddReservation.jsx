@@ -167,6 +167,8 @@ function AddReservation() {
             <option value="td">{t("Td")}</option>
             <option value="tp">{t("Tp")}</option>
             <option value="amphi">{t("Amphi")}</option>
+            <option value="s">{t("Speacial")}</option>
+            <option value="n">{t("Normal")}</option>
           </select>
           {/* <dir><input type="time" /></dir> */}
           <select
@@ -223,23 +225,22 @@ function AddReservation() {
                   <th>
                     <span>{t("Floor")}</span>
                   </th>
-                  <th>
-                    
-                  </th>
+                  <th></th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-          
                 {available ? (
                   elements
-                    .filter((val) => val.roomname.includes(roomType))
+                    .filter((val) => val.roomname.includes(roomType) || val.type.includes(roomType) )
                     .map((row) => (
                       <tr key={row.id}>
                         <td className={styles.roomname}>
                           {row.roomname.toUpperCase()}
                           <span
-                            className={row.type=="s"? styles.show : styles.hide}
+                            className={
+                              row.type == "s" ? styles.show : styles.hide
+                            }
                           >
                             <AiFillStar />
                           </span>
