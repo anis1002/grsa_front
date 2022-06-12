@@ -8,7 +8,8 @@ function Login({ Authentication, defineTeacher, defineAdmin, defineAdminPer }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  let error = localStorage.getItem("loginStatus");
+  // let error = localStorage.getItem("loginStatus");
+  const [error, seterror] = useState(false);
   let localestoragePersonType = localStorage.getItem("person");
   localestoragePersonType = JSON.parse(localestoragePersonType);
   // console.log(localestoragePersonType)
@@ -64,6 +65,7 @@ function Login({ Authentication, defineTeacher, defineAdmin, defineAdminPer }) {
       let person = localStorage.getItem("person");
       person = JSON.parse(person);
       navigate(`/${person}/login`);
+      seterror(true)
     }
   }
 
@@ -83,7 +85,7 @@ function Login({ Authentication, defineTeacher, defineAdmin, defineAdminPer }) {
               <input
                 type="text"
                 required
-                onChange={(event) =>setEmail(event.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
                 value={email}
                 className={styles.input}
               />
@@ -105,20 +107,20 @@ function Login({ Authentication, defineTeacher, defineAdmin, defineAdminPer }) {
               <label>{t("Password")}</label>
             </div>
           </div>
-          <p className={error ? styles.error : styles.nondisplay}>
-            {t("Incorrect email or password.")}
-          </p>
+
           <button
             className={styles.button}
             type="submit"
             onClick={() => {
               login();
-              
             }}
           >
             {t("LOGIN")}
           </button>
         </div>
+        <p className={error ? styles.error : styles.nondisplay}>
+          {t("Incorrect email or password.")}
+        </p>
       </div>
     </div>
   );

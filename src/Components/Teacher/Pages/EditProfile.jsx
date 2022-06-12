@@ -63,6 +63,7 @@ const EditProfileT = () => {
     result = await result.json();
     // console.log(result)
     alert(result);
+    window.location.reload(true);
   }
   return (
     <div className={styles.mainPage}>

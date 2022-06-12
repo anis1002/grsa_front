@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import avatar from "../../Img/teacher.webp";
 import avatarA from "../../Img/Admin.png";
-import { ImCross} from "react-icons/im";
+import { ImCross } from "react-icons/im";
 // import RecievedMessages from './RecievedMessages';
 
 const RecievedMessages = () => {
@@ -21,7 +21,7 @@ const RecievedMessages = () => {
   const { t } = useTranslation();
 
   // let rows = JSON.parse(localStorage.getItem("comments"));
-  
+
   async function comments() {
     const commentNeeds = { emailSend };
     let result = await fetch("http://localhost:8000/api/showmyrecievemessage", {
@@ -36,10 +36,10 @@ const RecievedMessages = () => {
     // console.log(result);
     // localStorage.setItem("comments", JSON.stringify(result));
     setelement(result);
-    
+
     setavailable(true);
   }
-  
+
   useEffect(() => {
     setemailSend(JSON.parse(localStorage.getItem("userEmail")));
     comments();
@@ -48,20 +48,20 @@ const RecievedMessages = () => {
 
   async function deleteComment(id) {
     if (window.confirm("Are You Sure")) {
-        const commentNeeds = { id };
-        let result = await fetch("http://localhost:8000/api/Deletmessage", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(commentNeeds),
-        });
-        result = await result.json();
-        // console.log(id)
-        comments();
+      const commentNeeds = { id };
+      let result = await fetch("http://localhost:8000/api/Deletmessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(commentNeeds),
+      });
+      result = await result.json();
+      // console.log(id)
+      comments();
     } else {
-      alert('Canceled')
+      alert("Canceled");
     }
   }
   // console.log(element)
@@ -109,7 +109,7 @@ const RecievedMessages = () => {
                       className={`${styles.button2} ${styles.btns}`}
                       onClick={() => {
                         // console.log("delete");
-                        deleteComment(row.id)
+                        deleteComment(row.id);
                         // refuseRequest(row.teacher_email, row.id, row.room_id);
                       }}
                     >

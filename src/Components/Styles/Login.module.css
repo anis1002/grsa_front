@@ -72,7 +72,7 @@
   position: relative;
   text-align: start;
 }
-.select_field > p {
+.select_field > .login_choose{
   position: absolute;
   top: 140px;
   left: 14%;
@@ -91,6 +91,7 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
 
 .select:focus {
   background-color: #008080;
@@ -340,10 +341,14 @@ label {
 
 .error {
   position: absolute;
-  top: 64%;
-  padding: 0;
+  /* padding: 0; */
   color: red;
   font-size: 13px;
+  bottom:23%;
+right:10%;
+}
+.position{
+  
 }
 .login_choose {
   font-size: 10px;

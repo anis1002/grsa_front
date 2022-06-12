@@ -442,11 +442,11 @@ async function EditMaterial() {
           <tbody>
             {row.map((rows, index) => (
               <tr key={index}>
-                <td>{rows.typematerial.toUpperCase()}</td>
+                <td className={styles.typeMaterial}>{rows.typematerial.toUpperCase()}</td>
                 <td>
                   {rows.property}{" "}
                   <span className={styles.stairs}>
-                    <FcViewDetails />
+                    {/* <FcViewDetails /> */}
                   </span>
                 </td>
                 <td>
