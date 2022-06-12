@@ -136,9 +136,9 @@ function EditMaterailRes() {
               </option>
             ))}
           </select>
-          <p className={styles.title}>{t("Edit Material Booking")}</p>
 
           <div className={styles.logoConstantine}>
+          <p className={styles.title}>{t("Edit Material Booking")}</p>
             <img src={logo} className={styles.logo} />
           </div>
         </div>

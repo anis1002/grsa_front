@@ -8,8 +8,9 @@
   "Add Material": "اضافة عتاد",
   "State of Material": "حالة العتاد",
   "Request On Speacial Rooms": "الطلبات الاقسام الخاصة",
-  "My Material Reservation": "عتادي المحجوز",
+  "My Material Reservation": "عتادي",
   "Edit Material Booking": "تعديل حجز العتاد",
+  "My Reservation Room": "اقسامي",
 
   "Normal": "عادي",
   "Special": "خاص",
@@ -57,6 +58,7 @@
   "My Reservation": "حجوزاتي",
   "Contact Owner": "الاتصال بصاحب الحجز",
   "Logout": "تسجيل الخروج",
+  "Confirm Password": "تأكيد كلمة المرور",
 
   "H": "سا",
   "Rooms": "الاقسام",

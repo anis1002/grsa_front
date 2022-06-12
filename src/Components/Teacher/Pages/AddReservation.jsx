@@ -167,7 +167,7 @@ function AddReservation() {
             <option value="td">{t("Td")}</option>
             <option value="tp">{t("Tp")}</option>
             <option value="amphi">{t("Amphi")}</option>
-            <option value="s">{t("Speacial")}</option>
+            <option value="s">{t("Special")}</option>
             <option value="n">{t("Normal")}</option>
           </select>
           {/* <dir><input type="time" /></dir> */}

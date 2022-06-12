@@ -160,7 +160,8 @@ function AddRoom() {
     <div className={styles.container}>
       <div className={styles.topcontainer}>
         <select
-          className={styles.filter}
+          // className={styles.filter}
+          className={blur ? `${styles.blur} ${styles.filter}` : styles.filter}
           onChange={(e) => {
             setTypefilter(e.target.value);
           }}

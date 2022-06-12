@@ -642,7 +642,7 @@ input:focus ~ .bar:after {
 .buttons2 {
   position: absolute;
   bottom: 2%;
-  right: 20%;
+  right: 30%;
 }
 
 .buttons1:hover,

@@ -155,9 +155,9 @@ function ReserveMaterial() {
               </option>
             ))}
           </select>
-          <p className={styles.title}>{t("Book Material")}</p>
 
           <div className={styles.logoConstantine}>
+          <p className={styles.title}>{t("Book Material")}</p>
             <img src={logo} className={styles.logo} />
           </div>
         </div>

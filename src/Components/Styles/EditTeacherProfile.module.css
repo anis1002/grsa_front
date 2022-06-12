@@ -99,7 +99,7 @@ background-position: -50%; */
 /* LABEL ======================================= */
 .label {
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;

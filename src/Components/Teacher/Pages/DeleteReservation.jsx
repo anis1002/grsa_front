@@ -160,7 +160,7 @@ function DeleteReservation() {
               // className={styles.dateInput}
             />
           </div>
-          <h4 className={styles.title}>{t("My Reservation")}</h4>
+          <h4 className={styles.title}>{t("My Reservation Room")}</h4>
           {/* <dir><input type="time" /></dir> */}
           {/* <select
             onChange={(event) => sethour(event.target.value)}

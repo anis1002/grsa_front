@@ -237,6 +237,7 @@
 .title {
   position: absolute;
   /* top: ; */
+  font-weight: bold;
   right: 10%;
   margin-left: 0%;
   /* background-color: aqua; */

@@ -45,7 +45,7 @@
 }
 .select{
   direction:  rtl;
-  width: 15%;
+  width: 17%;
 }
 
 .input_field {
@@ -248,6 +248,7 @@
 }
 .title {
   font-size: 25px;
+  font-weight: bold;
   /* font-weight: bold; */
   /* letter-spacing: 2px; */
   /* color: #008080; */
@@ -304,7 +305,9 @@ input[type="date"]:active {
   opacity: 0.5;
 }
 .logoConstantine {
-  background-color: #008080;
+  /* background-color: #008080; */
+  display: flex;
+  align-items: center;justify-content: center;
 }
 .logo {
   position: absolute;
