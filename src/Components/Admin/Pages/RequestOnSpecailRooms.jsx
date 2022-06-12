@@ -25,18 +25,22 @@ function RequestOnSpecailRooms() {
   async function refuseRequest(emailRe,id,room_id)
   {
     
-    let info = {emailRe,id,room_id}
-     let result = await fetch("http://localhost:8000/api/DeletRequest", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-         Accept: "application/json",
-       },
-       body: JSON.stringify(info),
-     });
-    result = await result.json();
-    alert(result)
-    allRequest()
+    if (window.confirm("Are You Sure ?")) {
+      let info = { emailRe, id, room_id };
+      let result = await fetch("http://localhost:8000/api/DeletRequest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(info),
+      });
+      result = await result.json();
+      alert(result);
+      allRequest();
+    } else {
+      alert("Canceled")
+   }
     // console.log(emailRe,id,room_id)
     // alert("Successfully Refused");
   }

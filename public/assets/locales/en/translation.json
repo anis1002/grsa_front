@@ -6,7 +6,7 @@
   "Special": "Special",
   "Type": "Type",
   "Request On Speacial Rooms": "Request Speacial Rooms",
-  "My Material Reservation": "My Material Reserved",
+  "My Material Reservation": "My Reserved Material ",
   "Edit Material Booking": "Edit Material Booking",
 
   
@@ -51,7 +51,7 @@
   "Consult Reservation": "Consult Reservation",
   "Add Reservation": "Add Reservation",
   "Reserve Material": "Reserve Material",
-  "My Reservation": "My Rooms Reservations",
+  "My Reservation": "My reserved rooms",
   "Contact Owner": "Contact Owner",
   "Logout": "Logout",
 

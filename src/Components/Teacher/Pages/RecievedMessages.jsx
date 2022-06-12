@@ -47,18 +47,22 @@ const RecievedMessages = () => {
   }, [available]);
 
   async function deleteComment(id) {
-     const commentNeeds = { id };
-     let result = await fetch("http://localhost:8000/api/Deletmessage", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-         Accept: "application/json",
-       },
-       body: JSON.stringify(commentNeeds),
-     });
-     result = await result.json();
-    // console.log(id)
-    comments()
+    if (window.confirm("Are You Sure")) {
+        const commentNeeds = { id };
+        let result = await fetch("http://localhost:8000/api/Deletmessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(commentNeeds),
+        });
+        result = await result.json();
+        // console.log(id)
+        comments();
+    } else {
+      alert('Canceled')
+    }
   }
   // console.log(element)
 
