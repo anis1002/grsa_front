@@ -9,6 +9,9 @@
   scrollbar-face-color:#999; */
 
 }
+.materialname{
+  font-weight: bold;
+}
 .time{
    direction:  rtl;
   

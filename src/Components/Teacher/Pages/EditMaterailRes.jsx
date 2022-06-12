@@ -173,7 +173,7 @@ function EditMaterailRes() {
                 {available ? (
                   elements.map((row) => (
                     <tr key={row.id}>
-                      <td>{row.typematerial.toUpperCase()}</td>
+                      <td className={styles.materialname}>{row.typematerial.toUpperCase()}</td>
 
                       <td>
                         {row.property}

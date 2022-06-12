@@ -182,9 +182,7 @@ function ReserveMaterial() {
                   <th>
                     <span>{t("State")}</span>
                   </th>
-                  <th>
-                    {/* <span>{t("Action")}</span> */}
-                  </th>
+                  <th>{/* <span>{t("Action")}</span> */}</th>
                   <th></th>
                 </tr>
               </thead>
@@ -192,7 +190,9 @@ function ReserveMaterial() {
                 {available ? (
                   elements.map((row) => (
                     <tr key={row.id}>
-                      <td>{row.typematerial.toUpperCase()}</td>
+                      <td className={styles.materialname}>
+                        {row.typematerial.toUpperCase()}
+                      </td>
 
                       <td>
                         {row.property}

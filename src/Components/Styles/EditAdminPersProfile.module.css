@@ -76,7 +76,7 @@
 }
 .group {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: bold;
 }
 .input {
@@ -86,7 +86,7 @@
   width: 200px;
   border: none;
   border-bottom: 1px solid #ffffff;
-  color: #000000;
+  color: #dcdf87;
    
 }
 .input:focus {
@@ -101,7 +101,7 @@
   position: absolute;
   pointer-events: none;
   left: 5px;
-  top: 10px;
+  top: 15px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -111,8 +111,8 @@
 /* active state */
 .input:focus ~ .label,
 .input:valid ~ .label {
-  top: -20px;
-  font-size: 14px;
+  top: -5px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.782);
 }
 

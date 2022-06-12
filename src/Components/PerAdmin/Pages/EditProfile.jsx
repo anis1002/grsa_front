@@ -12,6 +12,7 @@ const EditProfileP = () => {
   const [lastName, setlastName] = useState("");
   const [ok, setok] = useState(false);
   const [response, setresponse] = useState(false);
+  const [password2, setpassword2] = useState("");
   // console.log(password, firstName, lastName)
   // console.log(email);
   useEffect(() => {
@@ -44,7 +45,7 @@ const EditProfileP = () => {
 
   async function EditAdminPerProfile() {
     setemail(JSON.parse(localStorage.getItem("userEmail")));
-    const adminPerInfo = { password, firstName, lastName, email };
+    const adminPerInfo = { password, firstName, lastName, email, password2 };
     let result = await fetch(
       "http://localhost:8000/api/editprofileprsnadministrative",
       {
@@ -104,7 +105,7 @@ const EditProfileP = () => {
           <div className={styles.group}>
             <input
               className={styles.input}
-              type="text"
+              type="password"
               required
               value={password}
               onChange={(e) => {
@@ -114,6 +115,20 @@ const EditProfileP = () => {
             <span className={styles.highlight}></span>
             <span className={styles.bar}></span>
             <label className={styles.label}>{t("Password")}</label>
+          </div>
+          <div className={styles.group}>
+            <input
+              className={styles.input}
+              type="password"
+              required
+              value={password2}
+              onChange={(e) => {
+                setpassword2(e.target.value);
+              }}
+            />
+            <span className={styles.highlight}></span>
+            <span className={styles.bar}></span>
+            <label className={styles.label}>{t("Confirm Password")}</label>
           </div>
           {/* <p className={`${ok ? styles.green : styles.red}`}>
             {response ? "UpDated" : ""}

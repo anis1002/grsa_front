@@ -133,7 +133,7 @@
 
 }
 .popupedit {
-  width: 70%;
+  width: 30%;
   height: 70%;
   background-color: rgb(255, 255, 255);
   /* filter: drop-shadow(0px 1px 4px #000); */
@@ -164,8 +164,14 @@
     animation-timing-function: ease-in-out; */
 }
 .popupedit h1 {
-  text-align: start;
-  margin-left: 40px;
+  /* text-align: start; */
+  /* margin-left: 40px; */
+ text-align: start;
+  /* margin-left: 40px; */
+  margin-top: 5px;
+  text-align: center;
+  font-size: 20px;
+
 }
 /* @keyframes floating {
     from { transform: translate(0,  0px); }
@@ -676,7 +682,7 @@ input:focus ~ .bar:after {
 .buttons2 {
   position: absolute;
   bottom: 2%;
-  right: 25%;
+  right: 50%;
 }
 
 .buttons1:hover,
@@ -706,7 +712,7 @@ input:focus ~ .bar:after {
 }
 .popupdelete {
   text-align: center;
-  width: 50%;
+  width: 40%;
   height: 40%;
   position: relative;
   border-radius: 20px;

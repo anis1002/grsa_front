@@ -169,6 +169,8 @@ function AddReservation() {
             <option value="td">{t("Td")}</option>
             <option value="tp">{t("Tp")}</option>
             <option value="amphi">{t("Amphi")}</option>
+            <option value="s">{t("Special")}</option>
+            <option value="n">{t("Normal")}</option>
           </select>
           {/* <dir><input type="time" /></dir> */}
           <select
@@ -185,7 +187,7 @@ function AddReservation() {
             <option value="">{t("Select a Timing")}</option>
 
             {timing.map((time) => (
-              <option value={time.roomtiming} key={time.roomtiming}>
+              <option value={time.roomtiming} key={time.roomtiming} className={styles.option} >
                 {
                   (time.starttime = time.starttime.replace(
                     ":00:00",
@@ -225,7 +227,7 @@ function AddReservation() {
                     <span>{t("Floor")}</span>
                   </th>
                   <th>
-                    <span>{t("Action")}</span>
+                    <span></span>
                   </th>
                   <th></th>
                 </tr>
@@ -260,7 +262,7 @@ function AddReservation() {
 
                 {available ? (
                   elements
-                    .filter((val) => val.roomname.includes(roomType))
+                    .filter((val) => val.roomname.includes(roomType) || val.type.includes(roomType))
                     .map((row) => (
                       <tr key={row.id}>
                         <td className={styles.roomname}>

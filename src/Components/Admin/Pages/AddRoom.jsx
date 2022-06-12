@@ -166,6 +166,9 @@ function AddRoom() {
           }}
         >
           <option value="">{t("All")}</option>
+          <option value="td">{t("Td")}</option>
+          <option value="tp">{t("Tp")}</option>
+          <option value="amphi">{t("Amphi")}</option>
           <option value="s">{t("Special")}</option>
           <option value="n">{t("Normal")}</option>
         </select>
@@ -267,12 +270,12 @@ function AddRoom() {
                   </select>
                 </div>
               </div>
-              <div className={styles.secondHalf}></div>
+              {/* <div className={styles.secondHalf}></div> */}
             </div>
             {/* <p className={`${show ? styles.response : styles.hide}`}>
               {response ? "Added succesfully" : "error"}
             </p> */}
-            <h5>{t("Add Room")}</h5>
+            <h1>{t("Add Room")}</h1>
           </div>
           <div className={styles.bts}>
             <button
@@ -317,8 +320,8 @@ function AddRoom() {
           }
         >
           <h5>{t("Delete Room")}</h5>
-          <h3>{t("Want to delete?")}</h3>
-          <h5>{roomname}</h5>
+          <h6>{t("Want to delete?")}</h6>
+          <h4>{roomname}</h4>
           <div className={styles.bts}>
             <button
               className={styles.buttons3}
@@ -420,7 +423,7 @@ function AddRoom() {
             <p className={`${show ? styles.response : styles.hide}`}>
               {response ? "Updated succesfully" : "error"}
             </p>
-            <h5>{t("Edit Room")}</h5>
+            <h1>{t("Edit Room")}</h1>
           </div>
           <div className={styles.bts}>
             <button
@@ -461,12 +464,16 @@ function AddRoom() {
               <th>{t("Room Name")}</th>
               <th>{t("Capacity")}</th>
               <th>{t("Floor")}</th>
-              <th>{t("Action")}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className={styles.tbody}>
             {row
-              .filter((val) => val.type.includes(Typefilter))
+              .filter(
+                (val) =>
+                  val.type.includes(Typefilter) ||
+                  val.roomname.includes(Typefilter)
+              )
               .map((rows, index) => (
                 <tr key={index}>
                   <td className={styles.roomname}>

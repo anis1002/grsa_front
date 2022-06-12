@@ -9,6 +9,11 @@
 *{
   font-family: 'Roboto';
 }
+
+.materialname{
+  font-weight: bold;
+}
+
 .select{
   direction: rtl;
 }

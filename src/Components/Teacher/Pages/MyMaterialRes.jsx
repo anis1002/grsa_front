@@ -162,7 +162,9 @@ function MyMaterialRes() {
                     // .filter((val) => val.roomname.includes(roomType))
                     .map((row, index) => (
                       <tr key={index}>
-                        <td>{row.typematerial.toUpperCase()}</td>
+                        <td className={styles.materialname}>
+                          {row.typematerial.toUpperCase()}
+                        </td>
                         <td>{row.state}</td>
                         <td>{row.reservationdate}</td>
                         <td className={styles.time}>

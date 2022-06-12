@@ -15,6 +15,7 @@ import { AiFillEdit, AiOutlineLaptop } from "react-icons/ai";
 import { Link, Navigate } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
+import { AiFillStar } from "react-icons/ai";
 
 // import { style } from "@mui/system";
 // import EditRevservation from './EditRevservation';
@@ -217,9 +218,7 @@ function DeleteReservation() {
                   <th>
                     <span>{t("timing")}</span>
                   </th>
-                  <th>
-                    {/* {t("Action")} */}
-                  </th>
+                  <th>{/* {t("Action")} */}</th>
                 </tr>
               </thead>
               <tbody>
@@ -228,7 +227,16 @@ function DeleteReservation() {
                     .filter((val) => val.roomname.includes(roomType))
                     .map((row, index) => (
                       <tr key={index}>
-                        <td>{row.roomname.toUpperCase()}</td>
+                        <td className={styles.roomname}>
+                          {row.roomname.toUpperCase()}
+                          <span
+                            className={
+                              row.type == "s" ? styles.show : styles.hide
+                            }
+                          >
+                            <AiFillStar />
+                          </span>
+                        </td>
                         <td>{row.reservationdate}</td>
                         <td className={styles.time}>
                           {

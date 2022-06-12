@@ -151,7 +151,8 @@ function ContactOwner() {
               <th>{t("First Name")}</th>
               <th>{t("Last Name")}</th>
               <th>{t("Email")}</th>
-              <th>{t("Send Message")}</th>
+              <th>{t("Phome Number")}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className={styles.tbody}>
@@ -167,6 +168,7 @@ function ContactOwner() {
                     <td>{row.firstname}</td>
                     <td>{row.lastname}</td>
                     <td>{row.email}</td>
+                    <td>{row.phonenumber}</td>
                     <td>
                       <button
                         // disabled={clicked ? true : false}

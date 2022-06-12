@@ -246,7 +246,7 @@ async function EditMaterial() {
                   </select>
                 </div>
               </div>
-              <div className={styles.secondHalf}></div>
+              {/* <div className={styles.secondHalf}></div> */}
             </div>
             {/* <p className={`${show ? styles.response : styles.hide}`}>
               {response ? "Added succesfully" : "error"}

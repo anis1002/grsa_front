@@ -5,12 +5,13 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const EditProfileA = () => {
-   const { t } = useTranslation();
+  const { t } = useTranslation();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [ok, setok] = useState(false);
+  const [password2, setpassword2] = useState("");
   const [response, setresponse] = useState(false);
   // console.log(password, firstName, lastName)
   // console.log(email);
@@ -41,7 +42,7 @@ const EditProfileA = () => {
 
   async function EditAdminProfile() {
     setemail(JSON.parse(localStorage.getItem("userEmail")));
-    const adminInfo = { password, firstName, lastName, email };
+    const adminInfo = { password, firstName, lastName, email, password2 };
     let result = await fetch("http://localhost:8000/api/editprofileadmin", {
       method: "POST",
       headers: {
@@ -99,7 +100,7 @@ const EditProfileA = () => {
           <div className={styles.group}>
             <input
               className={styles.input}
-              type="text"
+              type="password"
               required
               value={password}
               onChange={(e) => {
@@ -109,6 +110,21 @@ const EditProfileA = () => {
             <span className={styles.highlight}></span>
             <span className={styles.bar}></span>
             <label className={styles.label}>{t("Password")}</label>
+          </div>
+
+          <div className={styles.group}>
+            <input
+              className={styles.input}
+              type="password"
+              required
+              value={password2}
+              onChange={(e) => {
+                setpassword2(e.target.value);
+              }}
+            />
+            <span className={styles.highlight}></span>
+            <span className={styles.bar}></span>
+            <label className={styles.label}>{t("Confirm Password")}</label>
           </div>
           {/* <p className={`${ok ? styles.green : styles.red}`}>
             {response ? "UpDated" : ""}
