@@ -350,6 +350,9 @@ table tbody {
 }
 
 @media screen and (max-width: 784px) {
+   .table> td{
+  font-size: 5px;
+ }
   .title{
     font-size: 100%;
   }
@@ -365,7 +368,9 @@ table tbody {
   
 }
 @media screen and (max-width:616px) {
-
+ .table> td{
+  font-size: 5px;
+ }
 
   .logo {
     display: none;
@@ -383,7 +388,9 @@ table tbody {
 }
 @media screen and (max-width:508px) {
 
-
+ .table> td{
+  font-size: 5px;
+ }
 .title{
   display: none;
 }
@@ -396,5 +403,23 @@ table tbody {
 
    padding: 0;
   }
+  .table,
+td {
+  font-size:70%;
+}
+.selectRoomType{
+  position: absolute;
+  right: 10%;
+  width: 100px;
+  font-size: 70%;
+  
+}
+.dateInput{
+  /* position: absolute; */
+  /* left: 0%; */
+  /* width: 50px; */
+  font-size: 70%;
+
+}
 
 }

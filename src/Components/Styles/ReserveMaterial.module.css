@@ -338,14 +338,14 @@ input[type="date"]:active {
   .resversationImg {
     width: 20%;
   }
-  .resversationImg > img {
+  .resversationImg{
     display: none;
   }
   .table {
-    width: 80%;
+    width: 100%;
   }
-  .table thead {
-    width: 80%;
+  .table .tableHead {
+    width: 100%;
   }
   input[type="date"] {
     width: 90%;
@@ -353,27 +353,58 @@ input[type="date"]:active {
   .select {
     width: 37%;
   }
+  .keywords{
+    width: 100%;
+  }
 
   .filter {
     top: 0;
     width: 100%;
     height: 35px;
   }
+  .title{
+    display: none;
+  }
 }
 @media (max-width: 701px) {
-  .logo {
+  .resversationImg {
+    width: 20%;
+  }
+  .logoConstantine{
+    display: none;
+  }
+  .resversationImg{
     display: none;
   }
   .table {
-    width: 80%;
+    width: 100%;
   }
-  .table thead {
-    width: 80%;
+  .table .tableHead {
+    width: 100%;
   }
+  input[type="date"] {
+    width: 90%;
+  }
+  .select {
+    width: 37%;
+  }
+  .keywords{
+    width: 100%;
+  }
+
   .filter {
     top: 0;
     width: 100%;
     height: 35px;
+  }
+  .title{
+    display: none;
+  }
+  td> .button{
+      line-height: 0px;
+  min-height: 20px;
+  outline: 0;
+  font-size: 140%;
   }
 }
 

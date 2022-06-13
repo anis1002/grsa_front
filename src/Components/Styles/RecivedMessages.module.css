@@ -400,14 +400,14 @@ label {
   .card {
     width: 90%;
     margin-left: 5%;
-    /* height: 50px; */
+    height: 70px;
   }
   p {
     font-size: 50%;
   }
   .message {
-    font-size:70%;
-    margin-left: 10%;
+    font-size:60%;
+    margin-left: 5%;
   }
   /* .top_bar > .logo {
     display: none;
@@ -425,7 +425,7 @@ label {
     bottom: 0;
   }
   .button2{
-font-size: 100%;
+font-size:80%;
   }
 }
 @media all and (max-width: 375px) {

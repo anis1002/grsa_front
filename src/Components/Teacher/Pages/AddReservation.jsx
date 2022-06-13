@@ -154,7 +154,7 @@ function AddReservation() {
                 // setavailable(false)
               }}
               value={date}
-              // className={styles.dateInput}
+              className={styles.dateInput}
             />
           </dir>
           <select
