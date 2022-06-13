@@ -1,6 +1,6 @@
 @import url("../font/stylesheet.css");
-*{
-font-family: 'Roboto',sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
 }
 .main_container {
   height: 100vh;
@@ -17,22 +17,22 @@ font-family: 'Roboto',sans-serif;
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  overflow-y:scroll ;
+  overflow-y: scroll;
 }
 .table {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   /* margin: 0%; */
   /* border: none; */
 }
-.table> thead {
+.table > thead {
   position: sticky;
   height: 60px;
   width: 100%;
-  top:0;
+  top: 0;
   left: 0;
 
   background-color: #008080;
@@ -256,7 +256,7 @@ label {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
@@ -309,4 +309,218 @@ label {
   position: absolute;
   bottom: 2%;
   right: 17%;
+}
+@media screen and (max-width: 1069px) {
+  td {
+    font-size: 50%;
+  }
+  th {
+    font-size: 50%;
+  }
+  .btn {
+    padding: 1%;
+  }
+}
+
+
+
+@media all and (max-width: 877px) {
+  td {
+    font-size: 37%;
+  }
+  th {
+    font-size: 40%;
+  }
+  .btn {
+    /* padding: 1%; */
+    font-size: 9px;
+    /* padding:  2px 0px; */
+    /* font-weight: bold; */
+    line-height: 0px;
+    min-height: 0px;
+    outline: 0;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  .btntitle {
+    display: none;
+  }
+  .table >.thead{
+    /* background-color: aqua; */
+    height: 30px;
+  }
+
+  .btn > span {
+    font-size: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+  .group {
+    /* background-color: #008080; */
+    width: 40%;
+  }
+ /* .input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 50%;
+} */
+.input:focus ~ label,
+.input:valid ~ label {
+  top: -5px;
+  font-size: 9px;
+  /* color: #008080; */
+}
+.bar {
+
+  /* width: 50%; */
+}
+.input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 40%;
+}
+.input:focus ~ label,
+.input:valid ~ label {
+  top: -10px;
+  font-size: 9px;
+  color: #008080;
+}
+.input {
+  /* background: transparent; */
+  font-size: 9px;
+  height: 20px;
+  /* padding: 10px 10px 10px 5px; */
+  /* display: block; */
+  width:100px;
+  /* border: none; */
+  border-bottom: 1px solid #757575;
+}
+.btnRecived{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+}
+.messageBox{
+    width: 80%;
+  height: 30%;
+}
+.messageBox p {
+
+  font-size: 50%;
+}
+.messageBox h5 {
+  font-size: 50%;
+}
+.textArea {
+  width: 70%;
+  height: 30%;
+  font-size: 7px;
+}
+
+
+
+}
+@media all and (max-width: 375px) {
+  td {
+    font-size: 37%;
+  }
+  th {
+    font-size: 40%;
+  }
+  .btn {
+    /* padding: 1%; */
+    font-size: 9px;
+    /* padding:  2px 0px; */
+    /* font-weight: bold; */
+    line-height: 0px;
+    min-height: 0px;
+    outline: 0;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  .btntitle {
+    display: none;
+  }
+  .table >.thead{
+    /* background-color: aqua; */
+    height: 30px;
+  }
+
+  .btn > span {
+    font-size: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+  .group {
+    /* background-color: #008080; */
+    width: 40%;
+  }
+ /* .input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 50%;
+} */
+.input:focus ~ label,
+.input:valid ~ label {
+  top: -5px;
+  font-size: 9px;
+  /* color: #008080; */
+}
+.bar {
+
+  /* width: 50%; */
+}
+.input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 40%;
+}
+.input:focus ~ label,
+.input:valid ~ label {
+  top: -10px;
+  font-size: 9px;
+  color: #008080;
+}
+.input {
+  /* background: transparent; */
+  font-size: 9px;
+  height: 20px;
+  /* padding: 10px 10px 10px 5px; */
+  /* display: block; */
+  width:100px;
+  /* border: none; */
+  border-bottom: 1px solid #757575;
+}
+.btnRecived{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+}
+.messageBox{
+    width: 80%;
+  height: 30%;
+}
+.messageBox p {
+
+  font-size: 50%;
+}
+.messageBox h5 {
+  font-size: 50%;
+}
+.textArea {
+  width: 70%;
+  height: 30%;
+  font-size: 7px;
+}
+
+
+
 }

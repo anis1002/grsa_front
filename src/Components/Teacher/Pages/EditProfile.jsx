@@ -74,7 +74,7 @@ const EditProfileT = () => {
         </div>
         <div className={styles.card_right}>
           <span className={styles.line}></span>
-          <h1>{t("Edit Profile")}</h1>
+          <h1 className={styles.title}>{t("Edit Profile")}</h1>
 
           <div className={styles.group}>
             <input

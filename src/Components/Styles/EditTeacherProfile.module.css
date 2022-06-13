@@ -1,9 +1,8 @@
 @import url("../font/stylesheet.css");
-*{
-  font-family: 'Roboto',sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
 }
 .mainPage {
- 
   width: 100%;
   height: 100vh;
   /* background-color: aqua; */
@@ -75,7 +74,6 @@ background-position: -50%; */
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
   font-weight: bold;
- 
 }
 .group {
   position: relative;
@@ -90,7 +88,6 @@ background-position: -50%; */
   border: none;
   border-bottom: 1px solid #ffffff;
   color: #dcdf87;
-   
 }
 .input:focus {
   outline: none;
@@ -197,7 +194,6 @@ background-position: -50%; */
   }
 }
 .button {
-  
   background: #ffffff;
   border: 2px solid #008080;
   border-radius: 4px;
@@ -235,5 +231,53 @@ background-position: -50%; */
   /* background-color: #008080; */
   background-position: 0 0;
   /* color: #ffffff; */
-  opacity: .8;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1179px) {
+  .card {
+    width: 80%;
+    /* height: 40%; */
+  }
+  .card_right {
+    width: 100%;
+    color: #525252;
+  }
+  .card_left {
+    display: none;
+  }
+  .line {
+    display: none;
+  }
+  .label {
+    font-size: 70%;
+  }
+  .input:focus ~ .label,
+  .input:valid ~ .label {
+    color: #525252;
+    font-size: 70%;
+   
+  }
+
+  .input {
+    font-size: 10px;
+    color: #525252;
+    /* color: #525252; */
+  }
+  /* h1{
+    position: absolute;
+    top: 0;
+    color: #525252;
+  } */
+  .card_right >.title{
+    display: block;
+    position: absolute;
+    /* color: aqua; */
+    z-index: 999;
+    font-weight: bold;
+    /* color: #008080; */
+    color: #525252;
+   /* background-color: #008080; */
+   /* background-color: #dcdf87; */
+  }
 }

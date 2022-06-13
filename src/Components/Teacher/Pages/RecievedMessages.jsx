@@ -82,6 +82,7 @@ const RecievedMessages = () => {
           <span className={styles.bar}></span>
           <label>{t("Last Name")}</label>
         </div>
+
         <img src={logo} className={styles.logo} />
       </div>
       <div className={styles.content}>
@@ -101,7 +102,7 @@ const RecievedMessages = () => {
                     <p>{row.created_at}</p>
                   </div>
                   <div className={styles.downPart}>
-                    <p>{row.message}</p>
+                    <p className={styles.message}>{row.message}</p>
                   </div>
 
                   <div className={styles.buttons}>

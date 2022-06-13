@@ -167,17 +167,21 @@ function ContactOwner() {
                   <tr key={index}>
                     <td>{row.firstname}</td>
                     <td>{row.lastname}</td>
-                    <td>{row.email}</td>
+                    <td className={styles.email}>{row.email}</td>
                     <td>{row.phonenumber}</td>
                     <td>
                       <button
                         // disabled={clicked ? true : false}
+                        
                         className={styles.btn}
                         onClick={() => {
                           sendHandle(row.email);
                         }}
                       >
+                        <span className={styles.btntitle}>
+
                         {t("Send")}
+                        </span>
                         <span>
                           <AiOutlineSend />
                         </span>
